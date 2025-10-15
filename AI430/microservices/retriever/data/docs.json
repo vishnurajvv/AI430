@@ -1,0 +1,7 @@
+[
+  {"id": "doc1", "title": "Microservices Introduction", "body": "Microservices architecture splits services..."},
+  {"id": "doc2", "title": "API Gateway Patterns", "body": "API gateways centralize cross-cutting concerns..."},
+  {"id": "doc3", "title": "Kong Gateway", "body": "Kong is an open-source API Gateway widely used..."},
+  {"id": "doc4", "title": "Security Best Practices", "body": "Authentication and rate-limiting..."},
+  {"id": "doc5", "title": "Design for Idempotency", "body": "Idempotency ensures repeated requests don't change state..."}
+]

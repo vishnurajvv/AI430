@@ -1,0 +1,29 @@
+_format_version: "2.1"
+_transform: true
+
+services:
+- name: orchestrator
+  url: http://orchestrator:5002
+  routes:
+  - name: process-route
+    paths: ["/process-request"]
+    methods: ["POST"]
+
+plugins:
+- name: key-auth
+  service: orchestrator
+  config:
+    key_names: ["X-API-KEY"]
+    run_on_preflight: true
+
+- name: rate-limiting
+  service: orchestrator
+  config:
+    minute: 5
+    policy: local
+
+consumers:
+- username: test_consumer
+  custom_id: "student1"
+  keyauth_credentials:
+  - key: my-secret-api-key-12345
